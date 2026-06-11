@@ -102,7 +102,7 @@ const fieldDescriptions = {
 
 /* ── Field descriptions (Targets Configuration) ── */
 const targetDescriptions = {
-  'New Target': '<span class="method-tag">new</span> New Target',
+  'New Target': 'New Target',
   'Target Name': 'Name your Target.',
   'Initial Behaviour Timer': 'When the behaviour attached to the target will start, calculated in milliseconds (ms).',
   'Teleport Indicator': 'When the bot teleports it indicates where it went / spawned.',
