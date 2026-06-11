@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyAim — Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="app-shell">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
+          <span class="hamburger"></span>
+        </button>
+        <div class="brand">
+          <span class="brand-icon"><img src="Images/EasyAim_Logo.png" alt="EasyAim Logo"></span>
+          <span class="brand-text">EasyAim</span>
+          <span class="brand-sub">Documentation</span>
+        </div>
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input id="searchInput" type="text" class="search-input" placeholder="Search documentation&hellip;" />
+        </div>
+        <div class="version-badge">v1.0</div>
+      </header>
+
+      <!-- Layout -->
+      <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+          <nav class="sidebar-nav" id="sidebarNav"></nav>
+          <div class="sidebar-footer">
+            <span class="footer-text">Built for precision</span>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+          <div class="doc-container">
+            <div class="doc-content" id="docContent"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
