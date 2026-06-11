@@ -147,7 +147,7 @@ function renderContent() {
 
   sections[2].items.forEach(function (item) {
     var id = anchorId('targets-configuration', item);
-    var label = targetDescriptions[item] || item;
+    var label = item;
     var desc = item === 'New Target' ? 'Creates a new target configuration.' : (targetDescriptions[item] || '');
     html +=
       '<div id="' + id + '" class="field-card">' +
