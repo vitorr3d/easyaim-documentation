@@ -108,7 +108,7 @@ function renderContent() {
     '<div class="welcome-card">' +
     '<p class="welcome-text">' +
     'Welcome to the <strong>EasyAim Scenario Builder</strong> documentation. ' +
-    'Here you will find the explanation of every function and some examples ' +
+    'Here you will find explanations of every function and some examples ' +
     'of scenarios created by <a href="#" class="doc-link">r3d</a>.' +
     '</p>' +
     '<div class="welcome-stats">' +
@@ -163,9 +163,9 @@ function renderContent() {
     '<section id="behaviours-configuration" class="doc-section">' +
     '<h2 class="section-title secondary"><span class="section-icon">🧠</span> Behaviours Configuration</h2>' +
     '<div class="info-block">' +
-    '<p>Here is where you will setup everything that will happen with your target. You control every action.</p>' +
+    '<p>This is where you set up everything that will happen with your target. You control every action.</p>' +
     '<div class="info-callout">' +
-    '<strong>Behaviours</strong> are the "folder" of actions that will be executed by the targets. Inside of it you will find <strong>Frames</strong> and inside Frames will be located the <strong>actions</strong>.' +
+    '<strong>Behaviours</strong> are "folders" of actions executed by targets. Inside them you will find <strong>Frames</strong>, and inside Frames are the <strong>actions</strong>.' +
     '</div>' +
     '</div>' +
     '</section>';
@@ -210,6 +210,7 @@ function renderContent() {
   html +=
     '<footer class="doc-footer">' +
     '<p>EasyAim Scenario Builder &mdash; Documentation v1.0</p>' +
+    '<p>Built for the aiming community by r3d</p>' +
     '</footer>';
 
   docContent.innerHTML = html;
