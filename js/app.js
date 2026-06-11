@@ -210,7 +210,6 @@ function renderContent() {
   html +=
     '<footer class="doc-footer">' +
     '<p>EasyAim Scenario Builder &mdash; Documentation v1.0</p>' +
-    '<p>Built for the aiming community by r3d</p>' +
     '</footer>';
 
   docContent.innerHTML = html;
