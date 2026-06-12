@@ -78,6 +78,14 @@ const sections = [
       'On Target Health Reached',
     ],
   },
+  {
+    id: 'practical-examples',
+    label: 'Practical Examples',
+    icon: '📖',
+    items: [
+      'Static Clicking Scenario',
+    ],
+  },
 ];
 
 /* ── Field descriptions (First Configurations) ── */
@@ -192,5 +200,92 @@ const actionData = {
   'On Target Health Reached': {
     tag: 'event',
     desc: 'When the target health gets to the number you specified, you can attach another action to be executed.',
+  },
+};
+
+/* ── Practical Examples ── */
+const practicalExamples = {
+  'Static Clicking Scenario': {
+    desc: 'A complete step-by-step guide to creating your first static clicking scenario from scratch.',
+    sections: [
+      {
+        title: 'Configurations',
+        icon: '⚙️',
+        intro: 'Start with the first configuration page.',
+        steps: [
+          ['Scenario Title', 'Static Example'],
+          ['Scenario Description', 'This is an example.'],
+          ['Scenario Time', '60 Seconds (standard in the Aim Community)'],
+          ['Difficulty Level', '1 (Very Easy)'],
+          ['Scenario Type', 'Clicking'],
+          ['Automatic Assault Rifle', 'Off'],
+          ['Tube Room', 'Off (we want a square)'],
+          ['Room Size', 'Keep the standard → X = 100 | Y = 50 | Z = 75'],
+          ['Gravity XYZ', 'Set all to 0'],
+          ['Walls Preference', 'Keep as default — not needed for static scenario'],
+          ['Target Collision', 'No changes needed for a static scenario'],
+          ['Player Spawn XYZ', 'Change Z only to -20 (negative = backward)'],
+          ['Enable Player Movement XYZ', 'Off'],
+          ['Default Player Rotation', 'All 0'],
+          ['Points per Miss', '-5'],
+          ['Square Root Accuracy', 'Off'],
+          ['Accuracy Score Weight', '0%'],
+        ],
+      },
+      {
+        title: 'Targets',
+        icon: '🎯',
+        intro: 'This is the second configuration page.',
+        steps: [
+          ['Target Name', 'Target'],
+          ['Initial Behavior Time', '0 (ms)'],
+          ['Teleport Indicator', 'Off (can turn on if desired)'],
+          ['Attach Behaviour', 'Add the Behaviour created in the next configuration page'],
+          ['Target Shape', 'Sphere'],
+          ['Sphere Diameter', '0.8 — 0.8'],
+          ['Health On Hit', '-1'],
+          ['Points On Hit', '0'],
+          ['Points On Elimination', '10'],
+          ['Starting Health', '1 — 1'],
+          ['Cap Maximum Health', 'Always On'],
+          ['Show Healthbar', 'Off'],
+          ['Clone this target', 'Clone to 5 targets'],
+        ],
+      },
+      {
+        title: 'Behaviours',
+        icon: '🧠',
+        intro: 'The last page — control every action of the target.',
+        steps: [
+          ['Add Frame', 'Inside your behaviour, add a new frame and rename it to "Spawn"'],
+          ['Idle Duration', 'Keep idle at 0 (no wait time at spawn)'],
+          ['Add Action', 'Add a new action called Set Waypoint'],
+        ],
+        subsections: [
+          {
+            title: 'Set Waypoint Configuration',
+            steps: [
+              ['Teleport', 'On'],
+              ['Spawn out of map', 'Off'],
+              ['Prevent Last Death Spawn', 'On'],
+              ['Linear Movement', 'Off'],
+              ['Prevent Target Collision', 'On | Set distance to 3'],
+              ['Waypoint Type', 'Pin'],
+            ],
+          },
+          {
+            title: 'Pin Waypoint Configuration',
+            steps: [
+              ['Range Button', 'Click the # symbol at number 0 left side to set a range'],
+              ['X Axis', '-20 to 20'],
+              ['Y Axis', '-10 to 10'],
+              ['Z Axis', '30 (player at -20 → 50 distance)'],
+            ],
+          },
+        ],
+      },
+    ],
+    final: 'Go back to Target Configuration and attach the behaviour you created to the target.',
+    congratulations: true,
   },
 };

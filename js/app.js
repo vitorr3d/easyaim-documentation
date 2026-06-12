@@ -206,6 +206,71 @@ function renderContent() {
 
   html += '</div></section>';
 
+  // ── Practical Examples ──
+  var exampleSection = sections.find(function (s) { return s.id === 'practical-examples'; });
+  if (exampleSection && exampleSection.items) {
+    exampleSection.items.forEach(function (exampleName) {
+      var ex = practicalExamples[exampleName];
+      if (!ex) return;
+      var secId = anchorId('practical-examples', exampleName);
+      html +=
+        '<section id="' + secId + '" class="doc-section">' +
+        '<h2 class="section-title secondary"><span class="section-icon">📖</span> ' + exampleName + '</h2>' +
+        '<p class="section-desc">' + (ex.desc || '') + '</p>';
+
+      ex.sections.forEach(function (sec) {
+        html +=
+          '<div class="tutorial-block">' +
+          '<h3 class="tutorial-heading"><span class="tutorial-icon">' + (sec.icon || '📋') + '</span> ' + sec.title + '</h3>' +
+          (sec.intro ? '<p class="tutorial-intro">' + sec.intro + '</p>' : '') +
+          '<div class="tutorial-steps">';
+
+        sec.steps.forEach(function (step) {
+          html +=
+            '<div class="tutorial-step">' +
+            '<span class="step-label">' + step[0] + '</span>' +
+            '<span class="step-value">' + step[1] + '</span>' +
+            '</div>';
+        });
+
+        html += '</div>';
+
+        if (sec.subsections) {
+          sec.subsections.forEach(function (sub) {
+            html +=
+              '<div class="tutorial-subsection">' +
+              '<h4 class="tutorial-subheading">' + sub.title + '</h4>' +
+              '<div class="tutorial-steps">';
+            sub.steps.forEach(function (step) {
+              html +=
+                '<div class="tutorial-step">' +
+                '<span class="step-label">' + step[0] + '</span>' +
+                '<span class="step-value">' + step[1] + '</span>' +
+                '</div>';
+            });
+            html += '</div></div>';
+          });
+        }
+
+        html += '</div>';
+      });
+
+      if (ex.final) {
+        html += '<div class="tutorial-final"><p>' + ex.final + '</p></div>';
+      }
+
+      if (ex.congratulations) {
+        html +=
+          '<div class="tutorial-congrats">' +
+          '<span class="congrats-icon">🎉</span>' +
+          '<div><strong>CONGRATULATIONS!!</strong> You made your first static clicking scenario! 🎯</div>' +
+          '</div>';
+      }
+
+      html += '</section>';
+    });
+  }
+
   // ── Footer ──
   html +=
     '<footer class="doc-footer">' +
