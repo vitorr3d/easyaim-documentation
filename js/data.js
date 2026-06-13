@@ -84,6 +84,7 @@ const sections = [
     icon: '📖',
     items: [
       'Static Clicking Scenario',
+      'Sphere Smooth Tracking Scenario',
     ],
   },
 ];
@@ -287,5 +288,122 @@ const practicalExamples = {
     ],
     final: 'Go back to Target Configuration and attach the behaviour you created to the target.',
     congratulations: true,
+  },
+
+  'Sphere Smooth Tracking Scenario': {
+    desc: 'A complete step-by-step guide to creating a sphere smooth tracking scenario with orbit movement.',
+    sections: [
+      {
+        title: 'Configurations',
+        icon: '⚙️',
+        intro: 'Start with the first configuration page.',
+        steps: [
+          ['Scenario Title', 'Sphere Tracking Example'],
+          ['Scenario Description', 'This is an example.'],
+          ['Scenario Time', '60 Seconds (standard in the Aim Community)'],
+          ['Difficulty Level', '1 (Very Easy)'],
+          ['Scenario Type', 'Tracking'],
+          ['Automatic Assault Rifle', 'On'],
+          ['Tube Room', 'Off (we want a square)'],
+          ['Room Size', 'X = 100 | Y = 25 | Z = 100'],
+          ['Gravity XYZ', 'Set all to 0'],
+          ['Walls Preference', 'Keep as default — not needed for this scenario'],
+          ['Target Collision', 'No changes needed for a static scenario'],
+          ['Player Spawn XYZ', 'X = 0 | Z = 0 (Centralized) | Y = -8'],
+          ['Enable Player Movement XYZ', 'Off'],
+          ['Default Player Rotation', 'All 0'],
+          ['Points per Miss', '0'],
+          ['Square Root Accuracy', 'Off'],
+          ['Accuracy Score Weight', '0%'],
+        ],
+      },
+      {
+        title: 'Targets',
+        icon: '🎯',
+        intro: 'This is the second configuration page.',
+        steps: [
+          ['Target Name', 'Target'],
+          ['Initial Behavior Time', '0 (ms)'],
+          ['Teleport Indicator', 'Off (can turn on if desired)'],
+          ['Attach Behaviour', 'Add the Behaviour created in the next configuration page'],
+          ['Target Shape', 'Sphere'],
+          ['Sphere Diameter', '1 — 1'],
+          ['Health On Hit', '0'],
+          ['Points On Hit', '0.005'],
+          ['Points On Elimination', '0'],
+          ['Starting Health', '1 — 1'],
+          ['Cap Maximum Health', 'Always On'],
+          ['Show Healthbar', 'Off'],
+        ],
+      },
+      {
+        title: 'Behaviours',
+        icon: '🧠',
+        intro: 'The last page — control every action of the target.',
+        steps: [
+          ['Add Frame', 'Inside your behaviour, add a new frame and rename it to "Spawn"'],
+          ['Idle Duration', 'Keep idle at 0 (no wait time at spawn)'],
+          ['Add Action', 'Add a new action called Set Waypoint'],
+        ],
+        subsections: [
+          {
+            title: 'Set Waypoint Configuration',
+            steps: [
+              ['Teleport', 'On'],
+              ['Spawn out of map', 'Off'],
+              ['Prevent Last Death Spawn', 'Off'],
+              ['Linear Movement', 'Off'],
+              ['Prevent Target Collision', 'Off'],
+              ['Waypoint Type', 'Orbit'],
+            ],
+          },
+          {
+            title: 'Orbit Waypoint Configuration',
+            steps: [
+              ['360 Degrees', '0'],
+              ['Distance', '0'],
+              ['Y', '-8 (match player Y value)'],
+            ],
+          },
+          {
+            title: 'Other Spawn Frame Actions',
+            steps: [
+              ['Set Target Rubber Stiffness', 'X = 1.5 | Y = 0 | Z = 1.5'],
+              ['Set Target Max Speed', 'X = 25 | Y = 0 | Z = 25'],
+              ['Set Orbit Restriction', 'Minimum: 35 | Maximum: 35'],
+              ['On Frame End', 'Add 2 Frames — Left & Right'],
+            ],
+          },
+          {
+            title: 'Left Movement Frame',
+            steps: [
+              ['Idle', '500 — 1500 (ms) — click # to set range'],
+              ['Set Waypoint — Teleport', 'Off'],
+              ['Set Waypoint — Spawn out of map', 'Off'],
+              ['Set Waypoint — Prevent last death spawn', 'Off'],
+              ['Set Waypoint — Linear Movement', 'Off'],
+              ['Set Waypoint — Prevent Target Collision', 'Off'],
+              ['Waypoint Type', 'Orbit'],
+            ],
+          },
+          {
+            title: 'Left — Orbit Movement Config',
+            steps: [
+              ['360 Degrees', '-45 | Turn On Relative'],
+              ['Distance', '35 (same as Orbit Restriction and Spawn)'],
+              ['Y', 'Unset'],
+            ],
+          },
+          {
+            title: 'Right Movement Frame',
+            steps: [
+              ['Same as Left', 'Change 360 Degrees to 45 (Positive)'],
+            ],
+          },
+        ],
+      },
+    ],
+    congratulations: true,
+    congratsText: 'You made your first Tracking scenario!',
   },
 };

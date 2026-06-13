@@ -260,10 +260,11 @@ function renderContent() {
       }
 
       if (ex.congratulations) {
+        var congratsMsg = ex.congratsText || 'You made your first scenario!';
         html +=
           '<div class="tutorial-congrats">' +
           '<span class="congrats-icon">🎉</span>' +
-          '<div><strong>CONGRATULATIONS!!</strong> You made your first static clicking scenario! 🎯</div>' +
+          '<div><strong>CONGRATULATIONS!!</strong> ' + congratsMsg + '</div>' +
           '</div>';
       }
 
